@@ -1,4 +1,7 @@
 {
+    "name": "yusukezzz/migrator",
+    "license": "MIT",
+    "keywords": ["database", "migration"],
     "require": {
         "illuminate/database": "4.1.*",
         "yusukezzz/consolet": "dev-master"

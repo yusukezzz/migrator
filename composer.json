@@ -1,14 +1,11 @@
 {
     "require": {
         "illuminate/database": "4.1.*",
-        "illuminate/filesystem": "4.1.*"
+        "yusukezzz/consolet": "dev-master"
     },
     "autoload": {
-        "classmap": [
-            "sample/database/migrations"
-        ],
-        "psr-0": {
-            "Migrations": "src"
+        "psr-4": {
+            "Consolet\\Migrations\\": "src/Consolet/Migrations"
         }
     }
 }

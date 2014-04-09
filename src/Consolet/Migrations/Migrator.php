@@ -1,10 +1,10 @@
-<?php namespace Migrations;
+<?php namespace Consolet\Migrations;
 
 class Migrator extends \Illuminate\Database\Migrations\Migrator
 {
     public function resolve($file)
     {
-        /* @var $class \Migrations\Migration */
+        /* @var $class \Consolet\Migrations\Migration */
         $class = parent::resolve($file);
         $class::setSchemaOnce($this->resolveConnection()->getSchemaBuilder());
         return $class;

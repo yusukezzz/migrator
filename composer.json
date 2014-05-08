@@ -4,7 +4,7 @@
     "keywords": ["database", "migration"],
     "require": {
         "illuminate/database": "4.1.*",
-        "yusukezzz/consolet": "dev-master"
+        "yusukezzz/consolet": "0.*"
     },
     "autoload": {
         "psr-4": {

@@ -3,7 +3,7 @@
     "license": "MIT",
     "keywords": ["database", "migration"],
     "require": {
-        "illuminate/database": "4.1.*",
+        "illuminate/database": "4.2.*",
         "yusukezzz/consolet": "0.*"
     },
     "autoload": {

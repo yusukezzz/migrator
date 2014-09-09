@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Schema\Blueprint;
-use \Migrations\Migration;
+use Consolet\Migrations\Migration;
 
 class {{class}} extends Migration {
 
@@ -12,10 +12,7 @@ class {{class}} extends Migration {
      */
     public function up()
     {
-        self::$schema->table('{{table}}', function(Blueprint $table)
-        {
-            //
-        });
+        //
     }
 
     /**
@@ -25,10 +22,8 @@ class {{class}} extends Migration {
      */
     public function down()
     {
-        self::$schema->table('{{table}}', function(Blueprint $table)
-        {
-            //
-        });
+        //
     }
 
 }
+

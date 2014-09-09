@@ -1,4 +1,4 @@
-<?php namespace Consolet\Migrations;
+<?php namespace Consolet\Migrator;
 
 abstract class Migration extends \Illuminate\Database\Migrations\Migration
 {

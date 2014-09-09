@@ -8,7 +8,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Consolet\\Migrations\\": "src/Consolet/Migrations"
+            "Consolet\\": "src/Consolet"
         }
     }
 }

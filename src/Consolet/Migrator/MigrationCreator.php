@@ -1,4 +1,4 @@
-<?php namespace Consolet\Migrations;
+<?php namespace Consolet\Migrator;
 
 class MigrationCreator extends \Illuminate\Database\Migrations\MigrationCreator
 {

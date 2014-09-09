@@ -1,14 +1,15 @@
-<?php namespace Consolet\Migrations;
+<?php namespace Consolet\Migrator;
 
 use Consolet\Application;
 use Consolet\CommandProviderInterface;
+use Consolet\Migrator;
+use Consolet\Migrator\Commands\MigrateCommand;
+use Consolet\Migrator\Commands\MigrateMakeCommand;
+use Consolet\Migrator\Commands\MigrateRefreshCommand;
+use Consolet\Migrator\Commands\MigrateResetCommand;
+use Consolet\Migrator\Commands\MigrateRollBackCommand;
 use Illuminate\Database\Capsule\Manager;
 use Illuminate\Database\Console\Migrations\InstallCommand;
-use Illuminate\Database\Console\Migrations\MigrateCommand;
-use Illuminate\Database\Console\Migrations\MigrateMakeCommand;
-use Illuminate\Database\Console\Migrations\RefreshCommand;
-use Illuminate\Database\Console\Migrations\ResetCommand;
-use Illuminate\Database\Console\Migrations\RollbackCommand;
 use Illuminate\Database\Migrations\DatabaseMigrationRepository;
 
 class MigrationProvider implements CommandProviderInterface
@@ -21,16 +22,13 @@ class MigrationProvider implements CommandProviderInterface
         $migrator = new Migrator($repository, $resolver, $container['files']);
         $creator = new MigrationCreator($container['files']);
         $commands = [
-            new MigrateCommand($migrator, null),
-            new RollbackCommand($migrator),
-            new ResetCommand($migrator),
-            new RefreshCommand,
+            new MigrateCommand($migrator),
+            new MigrateRollbackCommand($migrator),
+            new MigrateResetCommand($migrator),
+            new MigrateRefreshCommand,
+            new MigrateMakeCommand($creator),
             new InstallCommand($repository),
-            new MigrateMakeCommand($creator, null),
         ];
-        foreach ($commands as $c) {
-            $c->setLaravel($container);
-        }
         $console->addCommands($commands);
     }
 
